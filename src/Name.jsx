@@ -16,8 +16,8 @@ const Name = () => {
   };
   return (
     <div className="flex  justify-center items-center min-h-screen">
-          <Card className="flex flex-col justify-center items-center p-10 gap-4">
-              <h1 className="font-semibold text-lg">Select name for counter</h1>
+      <Card className="flex flex-col justify-center items-center p-10 gap-4">
+        <h1 className="font-semibold text-lg">Select counter name</h1>
         <TextField
           label="Name"
           value={name}
