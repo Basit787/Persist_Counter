@@ -3,24 +3,15 @@ import {
   FLUSH,
   PAUSE,
   PERSIST,
-  persistReducer,
   persistStore,
   PURGE,
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import CounterReducer from "./reducer/CounterSlice";
+import rootReducer from "./reducer/index";
 
-const persistConfig = {
-  key: "root",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, CounterReducer);
-
-const store = configureStore({
-  reducer: persistedReducer,
+export const store = configureStore({
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -29,6 +20,4 @@ const store = configureStore({
     }),
 });
 
-const persistor = persistStore(store);
-
-export { persistor, store };
+export const persistor = persistStore(store);
