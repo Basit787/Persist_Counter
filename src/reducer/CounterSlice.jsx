@@ -7,7 +7,8 @@ const CounterSlice = createSlice({
   },
   reducers: {
     incrementCounter: (state) => {
-      state.value = state.value + 1;
+      if(state.value < 34) {
+      state.value = state.value + 1;}
     },
     decrementCounter: (state) => {
       if (state.value > 0) {
